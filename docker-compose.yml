@@ -5,7 +5,7 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    restart: 'unless-stopped'
+    restart: "unless-stopped"
     container_name: dps-meter
     ports:
       - "1338:1338"

@@ -54,13 +54,16 @@ namespace LostArkLogger
             u64_0 = reader.ReadUInt64();
             b_10 = reader.ReadByte();
             b_11 = reader.ReadByte();
-            
-            try {
+
+            try
+            {
                 var nonASCII = @"[^\x00-\x7F]+";
                 var rgx = new Regex(nonASCII);
                 if (rgx.IsMatch(Name))
                     Name = Npc.GetPcClass(ClassId);
-            } catch (Exception e) {
+            }
+            catch (Exception e)
+            {
                 Console.WriteLine("Failed matching PC name:\n" + e);
                 Name = "@BAD_NAME@" + new Random().Next(1000, 9999);
             }

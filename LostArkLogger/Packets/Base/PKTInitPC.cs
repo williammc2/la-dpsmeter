@@ -1,6 +1,5 @@
+using System;
 using System.Collections.Generic;
-using LoggerLinux.Configuration;
-
 namespace LostArkLogger
 {
     public partial class PKTInitPC
@@ -17,7 +16,6 @@ namespace LostArkLogger
         public UInt16 Level;
         public List<StatusEffectData> statusEffectDatas;
         public List<subPKTInitPC29> subPKTInitPC29s;
-        public SkillRunes skillRunes;
         public List<Byte[]> bytearraylist_0;
         public List<UInt16> u16list_0;
         public List<Byte[]> bytearraylist_1;

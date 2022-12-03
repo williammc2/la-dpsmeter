@@ -10,7 +10,7 @@ public class Configuration
     public Region Region = Region.Steam;
 
     public string WebHost = "host.docker.internal";
-    public string PCapAddress = "192.168.178.99";
+    public string PCapAddress = "192.168.15.14";
     public string PCapInterface = "";
     public int PCapPort = 1337;
     public int WebPort = 1338;

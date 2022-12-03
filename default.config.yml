@@ -1,7 +1,7 @@
 # idk if korea works, never tested it.
 region: Steam
-p-cap-address: <<UPDATE>>
-p-cap-interface: ''
+p-cap-address: 192.168.15.14
+p-cap-interface: ""
 p-cap-port: 1337
 web-port: 1338
 # How often should the overlay gets updated, in milliseconds
@@ -14,4 +14,4 @@ web-overlay: true
 web-host: host.docker.internal
 use-http-bridge: false
 # You can ignore this, it's just for special use cases, where the p-cap-address doesn't match with your lan address
-local-address: ''
+local-address: ""
