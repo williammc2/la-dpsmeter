@@ -46,29 +46,10 @@ Get-Service rpcapd
 
 ### Third step: Configure and run the container
 
-You have to pull the latest version of the docker image with the following command:
+Run docker-compose to build the container.
 
 ```bash
-docker pull ghcr.io/rexlmanu/la-dpsmeter:main
-```
-
-Copy the template from [default.config.yml](default.config.yml) and rename it to `config.yml`.
-You have to change the `p-cap-address` to the ip address of your main computer.
-
-You can find out your ip address by running `ipconfig` in a command prompt. It's your local lan address, not your public ip.
-
-After that, you can run the container with the following command:
-
-If you're on powershell, replace `$(pwd)` with `${PWD}`. On cmd, replace `$(pwd)` with `%cd%`.
-
-```bash
-docker run -d \
-  --name la-dpsmeter \
-  --restart unless-stopped \
-  -v $(pwd)/config.yml:/app/config.yml \
-  -v $(pwd)/logs:/mnt/raid1/apps/'Lost Ark Logs' \
-  -p 1338:1338 \
-  ghcr.io/rexlmanu/la-dpsmeter:main
+docker-compose up -d --build
 ```
 
 ### Fourth step: Access the overlay
@@ -77,20 +58,6 @@ You can access the overlay by opening the following url in your browser:
 
 ```
 http://<remote-computer-ip>:1338
-```
-
-## Update
-
-To update the container, you have to pull the latest version of the docker image with the following command:
-
-```bash
-docker pull ghcr.io/rexlmanu/la-dpsmeter:main
-```
-
-After that, you have to delete the container and recreate it with the same command as above (setup).
-
-```
-docker rm -f la-dpsmeter
 ```
 
 ## Support & Troubleshooting
